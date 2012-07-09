@@ -1,0 +1,21 @@
+<h1>已被注册终端列表</h1>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>终端名称</th>
+      <th>终端S/N</th>
+      <th></th>
+    </tr>
+ </thead>
+ <tbody>
+<% @devices.each do |device| %>
+    <tr>
+      <td><%= device.name %></td>
+      <td><%= device.sn_no %></td>
+      <td><%= link_to '详情', adminpanel_device_path(device), :class => "btn" %> &nbsp;&nbsp;&nbsp;&nbsp;<%= link_to '修改', edit_adminpanel_device_path(device) , :class => "btn" %>
+&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to '删除', adminpanel_device_path(device), confirm: 'Are you sure?', method: :delete, :class => "btn" %> &nbsp;&nbsp;&nbsp;&nbsp;<%= link_to '分配用户使用权限',  assign_user_adminpanel_device_path(device) , :class => "btn" %></td>
+    </tr>
+<% end %>
+  </tbody>
+</table>

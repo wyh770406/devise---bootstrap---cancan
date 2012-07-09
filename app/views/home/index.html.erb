@@ -1,0 +1,5 @@
+<h3>Home</h3>
+<%= "welcome user:"+current_user.name if current_user %>
+<% @users.each do |user| %>
+  <p>User: <%=link_to user.name, user %></p>
+<% end %>

@@ -1,0 +1,38 @@
+<h1>修改会话等级</h1>
+<%= form_for(@session_level,:url =>  adminpanel_session_level_path(@session_level)) do |f| %>
+  <% if @session_level.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@session_level.errors.count, "error") %> prohibited this session_level from being saved:</h2>
+
+      <ul>
+      <% @session_level.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <%#*<div class="control-group">%>
+    <%#= f.label :slevel_code, '会话等级代码', :class => "control-label" %>
+    <%#*<div class="controls">%>
+       <%#= f.text_field :slevel_code %>
+    <%#*</div>%>
+  <%#*</div>%>
+  <div class="control-group">
+    <%= f.label :slevel_name, '会话等级名称', :class => "control-label" %>
+    <div class="controls">
+       <%= f.text_field :slevel_name %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :slevel_desc, '会话等级描述', :class => "control-label" %>
+    <div class="controls">
+       <%= f.text_area :slevel_desc,:cols=>200,:rows=>10 %>
+    </div>
+  </div>
+  <div class="form-actions">
+    <%= f.submit '保存', :class => "btn btn-primary" %>
+  </div>
+<%end%>
+<%= link_to 'Show', adminpanel_session_level_path(@session_level), :class => "btn"  %>
+
+<%= link_to 'Back', adminpanel_session_levels_path, :class => "btn" %>

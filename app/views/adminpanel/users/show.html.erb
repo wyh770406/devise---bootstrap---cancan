@@ -1,0 +1,26 @@
+<h3>
+  <%= @user.name %>
+</h3>
+
+<p>
+  Email:
+  <%= @user.email %>
+</p>
+
+<p>
+  电话:
+  <%= @user.mobile %>
+</p>
+
+<p>
+  会话等级:
+  <%= @user.session_level.slevel_name if @user.session_level %>
+</p>
+
+<p>
+  设备序列号:
+  <%= @user.device_sn %>
+</p>
+<%= link_to '修改', edit_adminpanel_user_path(@user) , :class => "btn" %>
+&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to '删除', adminpanel_user_path(@user), confirm: 'Are you sure?', method: :delete, :class => "btn" %>
+<%= link_to '返回', adminpanel_users_path, :class => "btn" %>

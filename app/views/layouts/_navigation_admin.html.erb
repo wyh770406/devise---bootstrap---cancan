@@ -1,0 +1,23 @@
+<%= link_to "Luna Admin Panel", admin_root_path, :class => 'brand' %>
+<ul class="nav">
+  <% if admin_signed_in? %>
+    <li>
+      <%= link_to t(:logout), destroy_admin_session_path, :method=>'delete' %>
+    </li>
+
+    <li class="<%= 'active' if params[:controller] == 'adminpanel/users' %>">
+      <%= link_to "用户列表", adminpanel_users_path %>
+    </li>
+    <li class="<%= 'active' if params[:controller] == 'adminpanel/session_levels' %>">
+      <%= link_to "会话等级", adminpanel_session_levels_path %>
+    </li>
+    <li class="<%= 'active' if params[:controller] == 'adminpanel/devices' %>">
+      <%= link_to "设备管理", noregistration_adminpanel_devices_path %>
+    </li>
+  <% else %>
+    <li>
+      <%= link_to t(:login), new_admin_session_path %>
+    </li>
+  <% end %>
+
+</ul>

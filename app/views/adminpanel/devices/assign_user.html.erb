@@ -1,0 +1,17 @@
+<h1>分配用户使用权限</h1>
+<h3>设备名称:<%=@device.name%></h3><br/>
+
+<div><h4>有权限使用的用户列表:</h4>
+  <%@assigned.each do |user|%>
+    <%=link_to user.name,adminpanel_user_path(user)%>&nbsp;&nbsp;<%if user.device_sn==""%><%=link_to "移除",remove_adminpanel_device_path(:id=>@device.id,:user_id=>user.id), :class => "btn",method: :post%><%end%><br/>
+  <%end unless @assigned.nil?%>
+</div><br/>
+
+<div><h4>没有权限使用的用户列表：</h4>
+  <%@unassigned.each do |user|%>
+    <%=link_to user.name,adminpanel_user_path(user)%>&nbsp;&nbsp;<%=link_to "分配",assign_adminpanel_device_path(:id=>@device.id,:user_id=>user.id), :class => "btn",method: :post%><br/>
+  <%end unless @unassigned.nil?%>
+</div><br/>
+
+<%=link_to "返回已注册终端列表",adminpanel_devices_path,:class=>"btn btn-primary"%>
+

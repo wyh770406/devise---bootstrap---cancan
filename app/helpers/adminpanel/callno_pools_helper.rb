@@ -1,0 +1,2 @@
+module Adminpanel::CallnoPoolsHelper
+end

@@ -1,0 +1,8 @@
+
+<%if @flag=="true"%>
+
+$('#enable_flag').html('<a class="btn" rel="nofollow" data-remote="true" data-method="post" href="/adminpanel/users/<%=@user.id%>/enable?enable_flag=false">禁用</a>')
+
+<%else%>
+$('#enable_flag').html('<a class="btn" rel="nofollow" data-remote="true" data-method="post" href="/adminpanel/users/<%=@user.id%>/enable?enable_flag=true">启用</a>')
+<%end%>

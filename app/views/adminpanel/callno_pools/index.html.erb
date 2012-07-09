@@ -1,0 +1,27 @@
+<h1>呼叫号码池配置列表</h1>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>设为默认</th>
+      <th>名称</th>
+      <th>最小呼叫号码</th>
+      <th>最大呼叫号码</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @callno_pools.each do |callno_pool| %>
+      <tr>
+        <td><%= radio_button_tag 'callno_pool',callno_pool.id ,callno_pool.is_default ? true:false,:onclick=>"javascript:set_default_callno_pool("+callno_pool.id.to_s+")"%></td>
+        <td><%= callno_pool.name %></td>
+        <td><%= callno_pool.start_callno %></td>
+        <td><%= callno_pool.end_callno %></td>
+        <td><%= link_to '详情', adminpanel_callno_pool_path(callno_pool), :class => "btn" %> &nbsp;&nbsp;&nbsp;&nbsp;<%= link_to '修改', edit_adminpanel_callno_pool_path(callno_pool) , :class => "btn" %>
+          &nbsp;&nbsp;&nbsp;&nbsp;<%= link_to '删除', adminpanel_callno_pool_path(callno_pool), confirm: 'Are you sure?', method: :delete, :class => "btn" %> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to '添加呼叫号码池', new_adminpanel_callno_pool_path, :class => "btn btn-primary" %>

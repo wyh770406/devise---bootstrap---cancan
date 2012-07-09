@@ -1,0 +1,2 @@
+module Adminpanel::DevicesHelper
+end

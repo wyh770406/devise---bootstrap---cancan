@@ -1,0 +1,65 @@
+<h1>修改终端信息</h1>
+<%= form_for(@device,:url =>  adminpanel_device_path(@device)) do |f| %>
+  <% if @device.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@device.errors.count, "error") %> prohibited this device from being saved:</h2>
+
+      <ul>
+      <% @device.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="control-group">
+       <%= f.label :sn_no, '终端S/N', :class => "control-label" %>
+    <div class="controls">
+       <%#=f.hidden_field :noregistration_device_id,:value=>(@noregistration_device.sn_no if @noregistration_device)||0 %>
+       <%= f.text_field :sn_no  %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :name, '终端名称', :class => "control-label" %>
+    <div class="controls">
+
+       <%= f.text_field :name  %>
+
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :callno, '呼叫号码', :class => "control-label" %>
+    <div class="controls">
+
+       <%= f.text_field :callno  %>
+
+    </div>
+  </div>
+  <%#*<div class="control-group">%>
+    <%#= f.label :callpass, '呼叫密码', :class => "control-label" %>
+    <%#*<div class="controls">%>
+
+       <%#= f.text_field :callpass  %>
+
+    <%#*</div>%>
+  <%#*</div>%>
+  <div class="control-group">
+    <%= f.label :user_id, '默认使用用户', :class => "control-label" %>
+    <div class="controls">
+
+      <%#=f.date_select(:birth)%>
+      <%=f.collection_select :user_id,User.where("(device_sn='' and id in (select user_id from devices_users where device_id = :device_id)) or id=:user_id",{:device_id=>@device.id,:user_id=>@device.user_id}) , :id,:name%>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :desc, '终端描述', :class => "control-label" %>
+    <div class="controls">
+       <%= f.text_area :desc,:style=>"width:400px;height:150px" %>
+    </div>
+  </div>
+  <div class="form-actions">
+    <%= f.submit '保存', :class => "btn btn-primary" %>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <%= link_to '返回', adminpanel_devices_path, :class => "btn" %>
+  </div>
+<%end%>

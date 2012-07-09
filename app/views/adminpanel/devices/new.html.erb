@@ -1,0 +1,71 @@
+<h1>注册新终端</h1>
+
+<%= form_for(@device,:url =>  adminpanel_devices_path(:noregistration_device_id=>(@noregistration_device.id if @noregistration_device)||0), :html => {:class => 'form-inline'}) do |f| %>
+  <% if @device.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@device.errors.count, "error") %> prohibited this device from being saved:</h2>
+
+      <ul>
+      <% @device.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="control-group">
+       <%= f.label :sn_no, '终端S/N', :class => "control-label" %>
+    <div class="controls">
+       <%#=f.hidden_field :noregistration_device_id,:value=>(@noregistration_device.sn_no if @noregistration_device)||0 %>
+       <%= f.text_field :sn_no ,:value=>(@noregistration_device.sn_no if @noregistration_device)||"" %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :name, '终端名称', :class => "control-label" %>
+    <div class="controls">
+
+       <%= f.text_field :name,:value=>(@noregistration_device.name if @noregistration_device)||""  %>
+
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :callno, '呼叫号码', :class => "control-label" %>
+    <div class="controls">
+
+       <%= f.text_field :callno,:value=>@rand_callno,:onblur=>"javascript:$('#default_user').val($(this).val())"  %>
+
+    </div>
+  </div>
+  <%#*<div class="control-group">%>
+    <%#= f.label :callpass, '呼叫密码', :class => "control-label" %>
+    <%#*<div class="controls">%>
+
+       <%#= f.text_field :callpass  %>
+
+    <%#*</div>%>
+  <%#*</div>%>
+  <div class="control-group">
+    <%= f.label :default_user, '设备默认用户', :class => "control-label" %>
+    <div class="controls">
+      <input id="default_user" type="text" size="30" name="default_user" value="<%=@rand_callno%>" disabled="disabled">
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :default_user, '设备默认用户密码', :class => "control-label" %>
+    <div class="controls">
+      <input id="default_user_pass" type="text" size="30" name="default_user_pass" value="初始默认密码 123456" disabled="disabled">
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :desc, '终端描述', :class => "control-label" %>
+    <div class="controls">
+       <%= f.text_area :desc,:style=>"width:400px;height:150px" %>
+    </div>
+  </div>
+  <div class="form-actions">
+    <%= f.submit '保存', :class => "btn btn-primary" %>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <%= link_to '返回', noregistration_adminpanel_devices_path, :class => "btn" %>
+  </div>
+<%end%>

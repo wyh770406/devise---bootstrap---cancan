@@ -1,0 +1,27 @@
+
+<h1>会话等级列表</h1>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <!--th>会话等级代码</th-->
+      <th>会话等级名称</th>
+      <th></th>
+    </tr>
+ </thead>
+ <tbody>
+<% @session_levels.each do |session_level| %>
+    <tr>
+      <!--td><%#= session_level.slevel_code %></td-->
+      <td><%= session_level.slevel_name %></td>
+      <td><%= link_to '详情', adminpanel_session_level_path(session_level), :class => "btn" %> &nbsp;&nbsp;&nbsp;&nbsp;<%= link_to '修改', edit_adminpanel_session_level_path(session_level) , :class => "btn" %>
+&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to '删除', adminpanel_session_level_path(session_level),  confirm: 'Are you sure?', method: :delete,:class => "btn" %>
+&nbsp;&nbsp;&nbsp;&nbsp;<span id="moveupdown">
+  <span id="moveup"><%if session_level.slevel_code!=@min_slevel_code%><%= link_to '向上调整',  '#',:remote=>true,:onclick=>"javascript:move_up("+session_level.id.to_s+",$(this));",  :class => "btn up" %><%end%></span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span id="movedown"><%if session_level.slevel_code!=@max_slevel_code%><%= link_to '向下调整',  '#',:remote=>true,:onclick=>"javascript:move_down("+session_level.id.to_s+",$(this));", :class => "btn down" %><%end%></span></span></td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link_to '添加会话等级', new_adminpanel_session_level_path, :class => "btn btn-primary" %>

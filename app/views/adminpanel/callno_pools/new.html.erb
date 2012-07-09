@@ -1,0 +1,57 @@
+<h1>添加呼叫号码池</h1>
+
+<%= form_for(@callno_pool,:url =>  adminpanel_callno_pools_path, :html => {:class => 'form-inline'}) do |f| %>
+  <% if @callno_pool.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@callno_pool.errors.count, "error") %> prohibited this device from being saved:</h2>
+
+      <ul>
+      <% @callno_pool.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="control-group">
+       <%= f.label :name, '呼叫号码池名称', :class => "control-label" %>
+    <div class="controls">
+       <%#=f.hidden_field :noregistration_device_id,:value=>(@noregistration_device.sn_no if @noregistration_device)||0 %>
+       <%= f.text_field :name  %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :start_callno, '最小呼叫号码', :class => "control-label" %>
+    <div class="controls">
+
+       <%= f.text_field :start_callno %>
+
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :end_callno, '最大呼叫号码', :class => "control-label" %>
+    <div class="controls">
+
+       <%= f.text_field :end_callno  %>
+
+    </div>
+  </div>
+  
+
+  <div class="control-group">
+    <%= f.label :desc, '呼叫号码池描述', :class => "control-label" %>
+    <div class="controls">
+       <%= f.text_area :desc,:style=>"width:400px;height:150px" %>
+    </div>
+  </div>
+  <div class="form-actions">
+    <%= f.submit '保存', 
+      :onclick=>"javascript:return check_validate($('#callno_pool_start_callno').val(),$('#callno_pool_end_callno').val());", :class => "btn btn-primary" %>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <%= link_to '返回', adminpanel_callno_pools_path, :class => "btn" %>
+  </div>
+<%end%>
+
+    <script type="text/javascript">
+
+    </script>
+

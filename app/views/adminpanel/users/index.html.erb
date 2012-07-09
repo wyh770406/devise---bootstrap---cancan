@@ -1,0 +1,41 @@
+<h1>用户列表</h1>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>用户名称</th>
+      <th>用户Email</th>
+      <th>电话</th>
+      <th>会话等级</th>
+      <th>设备序列号</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <td><%= user.mobile %></td>
+        <td><%= user.session_level.slevel_name if user.session_level %></td>
+        <td><%= user.device_sn %></td>
+        <td><%= link_to '详情', adminpanel_user_path(user), :class => "btn" %>&nbsp;&nbsp;&nbsp;&nbsp;
+          <%= link_to '修改', edit_adminpanel_user_path(user) , :class => "btn" %>
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          <%if user.device_sn==""%>
+            <%= link_to '删除', adminpanel_user_path(user), confirm: 'Are you sure?', method: :delete, :class => "btn" %> &nbsp;&nbsp;&nbsp;&nbsp;
+            <span id="enable_flag">
+              <%if user.enable %>
+                <%= link_to '禁用', enable_adminpanel_user_path(user,:enable_flag=>"false") ,:remote=>true, confirm: 'Are you sure?',:method=>:post, :class => "btn" %>
+              <%else%>
+                <%= link_to '启用', enable_adminpanel_user_path(user,:enable_flag=>"true") ,:remote=>true, confirm: 'Are you sure?',:method=>:post, :class => "btn" %>
+              <%end%>
+            </span>
+          <%end%>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to '添加用户', new_adminpanel_user_path, :class => "btn btn-primary" %>

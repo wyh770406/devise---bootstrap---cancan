@@ -1,0 +1,26 @@
+<h3>
+  <%= @device.name %>
+</h3>
+
+<p>
+  设备序列号:
+  <%= @device.sn_no %>
+</p>
+
+<p>
+  呼叫号码:
+  <%= @device.callno %>
+</p>
+
+<p>
+  设备描述:
+  <%= @device.desc %>
+</p>
+
+<p>
+  设备默认用户名:
+  <%= @user.name %>
+</p>
+<%= link_to '修改', edit_adminpanel_device_path(@device) , :class => "btn" %>
+&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to '删除', adminpanel_device_path(@device), confirm: 'Are you sure?', method: :delete, :class => "btn" %>
+<%= link_to '返回 已注册终端列表', adminpanel_devices_path, :class => "btn" %>&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to '返回 未被注册终端列表', noregistration_adminpanel_devices_path, :class => "btn" %>

@@ -1,0 +1,19 @@
+<h3>
+  <%= @noregistration_device.name %>
+</h3>
+
+<p>
+  设备序列号:
+  <%= @noregistration_device.sn_no %>
+</p>
+
+<p>
+  IP地址:
+  <%= @noregistration_device.ip_address %>
+</p>
+
+<p>
+  MAC地址:
+  <%= @noregistration_device.mac_address %>
+</p>
+<%= link_to '返回', noregistration_adminpanel_devices_path, :class => "btn" %>

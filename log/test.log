@@ -1,0 +1,806 @@
+  [1m[36mSQL (45.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (137.5ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user@example.com' LIMIT 1[0m
+  [1m[35mSQL (174.5ms)[0m  INSERT INTO `users` (`created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 13 Jun 2012 10:22:47 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "user@example.com"], ["encrypted_password", "$2a$04$09MAejCwATWHey89sSIfpekpBtTmHJTPv5w8NukRl4TbmpLThVSqW"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Example User"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Wed, 13 Jun 2012 10:22:47 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (36.7ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user@foo.com' LIMIT 1
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'the_user@foo.bar.org' LIMIT 1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'first.last@foo.jp' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user@foo,com' LIMIT 1[0m
+  [1m[35mUser Exists (1.4ms)[0m  SELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user_at_foo.org' LIMIT 1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'example.user@foo.' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user@example.com' LIMIT 1[0m
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO `users` (`created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 13 Jun 2012 10:22:48 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "user@example.com"], ["encrypted_password", "$2a$04$gz/hg6WPG2ROsI39xn.UW.zXtVY4SubBSDijBud5loSHsKFr0Pu2C"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Example User"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Wed, 13 Jun 2012 10:22:48 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user@example.com' LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user@example.com' LIMIT 1
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO `users` (`created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 13 Jun 2012 10:22:48 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "user@example.com"], ["encrypted_password", "$2a$04$M6lIB5m8fHNAMufK.INVDOeIEVlb.lBzJuA0ZmC5xnQj4/z8E8N9C"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Example User"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Wed, 13 Jun 2012 10:22:48 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user@example.com' LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user@example.com' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user@example.com' LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user@example.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user@example.com' LIMIT 1
+  [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO `users` (`created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 13 Jun 2012 10:22:48 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "user@example.com"], ["encrypted_password", "$2a$04$xMRAhsueNnp8cee1UZe9w.BTWZ.XJZyQyEdBg.Raf0rWqfSNrl.96"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Example User"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Wed, 13 Jun 2012 10:22:48 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user@example.com' LIMIT 1
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO `users` (`created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 13 Jun 2012 10:22:48 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "user@example.com"], ["encrypted_password", "$2a$04$mBFO2eR0VvQSAQA8ZD1gEutG/6LGT..Rw5ppqsl2i0OR.3m2o9B1a"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Example User"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Wed, 13 Jun 2012 10:22:48 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.6ms)[0m  [1mROLLBACK[0m
+  [1m[36mSQL (75.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (22.6ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (650.6ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user@example.com' LIMIT 1[0m
+  [1m[35mSQL (212.1ms)[0m  INSERT INTO `users` (`created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 13 Jun 2012 10:27:43 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "user@example.com"], ["encrypted_password", "$2a$04$7BMlhOg.Cl51RS1cL41WCe0f/tI.CNxyk2xFJyBAGMfFoXiV5aUD2"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Example User"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Wed, 13 Jun 2012 10:27:43 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (69.1ms)[0m  ROLLBACK
+  [1m[36mSQL (9.7ms)[0m  [1mBEGIN[0m
+  [1m[35m (2529.1ms)[0m  ROLLBACK
+  [1m[36mSQL (4773.3ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (127290.2ms)[0m  SELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user@foo.com' LIMIT 1
+  [1m[36mUser Exists (47468.5ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'the_user@foo.bar.org' LIMIT 1[0m
+  [1m[35mUser Exists (52029.4ms)[0m  SELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'first.last@foo.jp' LIMIT 1
+  [1m[36m (4395.9ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (19188.9ms)[0m  BEGIN
+  [1m[36mUser Exists (78293.6ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user@foo,com' LIMIT 1[0m
+  [1m[36mSQL (37.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (72.1ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user@example.com' LIMIT 1[0m
+  [1m[35mSQL (97.6ms)[0m  INSERT INTO `users` (`created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 13 Jun 2012 10:47:45 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "user@example.com"], ["encrypted_password", "$2a$04$p2hWx4ufs2syv2UwCP8KyOmJxVuhzACl1.nHJLzoiD2HBOPOuCBjq"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Example User"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Wed, 13 Jun 2012 10:47:45 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (41.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user@foo.com' LIMIT 1
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'the_user@foo.bar.org' LIMIT 1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'first.last@foo.jp' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user@foo,com' LIMIT 1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user_at_foo.org' LIMIT 1
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'example.user@foo.' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user@example.com' LIMIT 1[0m
+  [1m[35mSQL (1.6ms)[0m  INSERT INTO `users` (`created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 13 Jun 2012 10:47:45 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "user@example.com"], ["encrypted_password", "$2a$04$T/H2ZPv7SfFR.OaUR8jWHOdKG3NzONnSF1oycZvrv560cAQNqUuZK"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Example User"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Wed, 13 Jun 2012 10:47:45 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user@example.com' LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user@example.com' LIMIT 1
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO `users` (`created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 13 Jun 2012 10:47:45 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "user@example.com"], ["encrypted_password", "$2a$04$RDdNNxPL5IcDJVp8bXLxsu9MkXELUm5TjlxpRsyv5AjPKrLOlPbfG"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Example User"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Wed, 13 Jun 2012 10:47:45 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user@example.com' LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user@example.com' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user@example.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user@example.com' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user@example.com' LIMIT 1
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO `users` (`created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 13 Jun 2012 10:47:45 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "user@example.com"], ["encrypted_password", "$2a$04$o/X5DXVmqcmkg7ANNQ2dzumVK99dyvdbbOp25Gq5.Vy4UFBTVLDPG"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Example User"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Wed, 13 Jun 2012 10:47:45 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user@example.com' LIMIT 1
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO `users` (`created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 13 Jun 2012 10:47:45 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "user@example.com"], ["encrypted_password", "$2a$04$4Try1z8vL76lfjJuGVK.Qu42oVpVtm6RnR77QLgXcKi645JSepjaG"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Example User"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Wed, 13 Jun 2012 10:47:45 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[36mSQL (36.8ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (50.3ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user@example.com' LIMIT 1[0m
+  [1m[35mSQL (75.5ms)[0m  INSERT INTO `users` (`created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 13 Jun 2012 10:48:54 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "user@example.com"], ["encrypted_password", "$2a$04$yuA1nFwnijHBIZQ4YnMo2OsbSIX9Ki.yx5330h2UTSsMA29tEEgnS"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Example User"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Wed, 13 Jun 2012 10:48:54 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (23.8ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user@foo.com' LIMIT 1
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'the_user@foo.bar.org' LIMIT 1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'first.last@foo.jp' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user@foo,com' LIMIT 1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user_at_foo.org' LIMIT 1
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'example.user@foo.' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user@example.com' LIMIT 1[0m
+  [1m[35mSQL (1.8ms)[0m  INSERT INTO `users` (`created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 13 Jun 2012 10:48:54 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "user@example.com"], ["encrypted_password", "$2a$04$Fz1JMZrZsxwfVSK3gKvyTuMXBDk04OxACjqKGLN0kuWphy2x6HBXm"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Example User"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Wed, 13 Jun 2012 10:48:54 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.3ms)[0m  SELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user@example.com' LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user@example.com' LIMIT 1
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO `users` (`created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 13 Jun 2012 10:48:54 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "user@example.com"], ["encrypted_password", "$2a$04$T.WnuYYbaxkOozH/rqSh0uEmb8iorRCJSqJBSZLYUak0y8WXrRpYe"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Example User"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Wed, 13 Jun 2012 10:48:54 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user@example.com' LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user@example.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user@example.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user@example.com' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user@example.com' LIMIT 1
+  [1m[36mSQL (1.5ms)[0m  [1mINSERT INTO `users` (`created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 13 Jun 2012 10:48:54 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "user@example.com"], ["encrypted_password", "$2a$04$6k6mXqcK6j.uvvp75UHTYe8utvv2y4snae.oeSAoTb2BR/zsZNdcW"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Example User"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Wed, 13 Jun 2012 10:48:54 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user@example.com' LIMIT 1
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO `users` (`created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 13 Jun 2012 10:48:54 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "user@example.com"], ["encrypted_password", "$2a$04$wJa/Y0yoZVe7HDvXH5qktOuhMMmtEMZmK5FUObGQVBR4pa2dQg1Qy"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Example User"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Wed, 13 Jun 2012 10:48:54 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[36mSQL (17.5ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (17.0ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user@example.com' LIMIT 1[0m
+  [1m[35mSQL (19.2ms)[0m  INSERT INTO `users` (`created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 13 Jun 2012 10:50:55 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "user@example.com"], ["encrypted_password", "$2a$04$vW/md09qwPIio5fhroSRue5cKTAoamSiLV3xNahSDMdvsyE0ohZ.O"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Example User"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Wed, 13 Jun 2012 10:50:55 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (52.9ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user@foo.com' LIMIT 1
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'the_user@foo.bar.org' LIMIT 1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'first.last@foo.jp' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user@foo,com' LIMIT 1[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user_at_foo.org' LIMIT 1
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'example.user@foo.' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user@example.com' LIMIT 1[0m
+  [1m[35mSQL (1.7ms)[0m  INSERT INTO `users` (`created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 13 Jun 2012 10:50:55 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "user@example.com"], ["encrypted_password", "$2a$04$Z3QMk9CTm6nYRcKAi6EUZe7l8JhG5o63NwjBX68zlPbiGDZwSpwVO"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Example User"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Wed, 13 Jun 2012 10:50:55 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user@example.com' LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user@example.com' LIMIT 1
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO `users` (`created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 13 Jun 2012 10:50:55 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "user@example.com"], ["encrypted_password", "$2a$04$/dsZKCiT6N/gLx8oMN9mUuveC2hs6CrjObIT7Bebix7WysGitS0KC"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Example User"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Wed, 13 Jun 2012 10:50:55 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user@example.com' LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user@example.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user@example.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user@example.com' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user@example.com' LIMIT 1
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO `users` (`created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 13 Jun 2012 10:50:55 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "user@example.com"], ["encrypted_password", "$2a$04$lu/MKvqRhquDxsq6dVh18efvC.ZZGfdtIQ4gV/7H1iin.7zr/R1cu"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Example User"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Wed, 13 Jun 2012 10:50:55 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user@example.com' LIMIT 1
+  [1m[36mSQL (1.7ms)[0m  [1mINSERT INTO `users` (`created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 13 Jun 2012 10:50:55 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "user@example.com"], ["encrypted_password", "$2a$04$4IFIzXNiWt68Adtz6ZaiD.tFnc5e9GMXBA3NGPoJUTxpOQnfZT5cu"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Example User"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Wed, 13 Jun 2012 10:50:55 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[36mSQL (17.6ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (27.0ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user@example.com' LIMIT 1[0m
+  [1m[35mSQL (35.2ms)[0m  INSERT INTO `users` (`created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Fri, 15 Jun 2012 09:34:32 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "user@example.com"], ["encrypted_password", "$2a$04$o7srIkfrtgKi86vPDCjHGuUoVwGr5xh5IFiUHLd55ZbxYseqJkXIm"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Example User"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Fri, 15 Jun 2012 09:34:32 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (13.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user@foo.com' LIMIT 1
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'the_user@foo.bar.org' LIMIT 1[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'first.last@foo.jp' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user@foo,com' LIMIT 1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user_at_foo.org' LIMIT 1
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'example.user@foo.' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user@example.com' LIMIT 1[0m
+  [1m[35mSQL (1.6ms)[0m  INSERT INTO `users` (`created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Fri, 15 Jun 2012 09:34:32 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "user@example.com"], ["encrypted_password", "$2a$04$Gj9cmfvF6SSBsBDQSj6LqeY8VZp.sJMiaBYlDugCe3H9sVd9ZQ/G2"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Example User"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Fri, 15 Jun 2012 09:34:32 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.9ms)[0m  SELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user@example.com' LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user@example.com' LIMIT 1
+  [1m[36mSQL (1.5ms)[0m  [1mINSERT INTO `users` (`created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Fri, 15 Jun 2012 09:34:32 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "user@example.com"], ["encrypted_password", "$2a$04$S55ajBIiOGzkFjzAGUjC/uaAO4JrBrgHY.UVUhN7MXcgCJ0EgDAxm"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Example User"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Fri, 15 Jun 2012 09:34:32 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user@example.com' LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user@example.com' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user@example.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user@example.com' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user@example.com' LIMIT 1
+  [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO `users` (`created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Fri, 15 Jun 2012 09:34:32 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "user@example.com"], ["encrypted_password", "$2a$04$RoYd56VMBRWWkgeb1exUuORVKFXxG/7qwhydBhk1ApAU0m3nCCypa"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Example User"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Fri, 15 Jun 2012 09:34:32 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user@example.com' LIMIT 1
+  [1m[36mSQL (1.7ms)[0m  [1mINSERT INTO `users` (`created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Fri, 15 Jun 2012 09:34:32 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "user@example.com"], ["encrypted_password", "$2a$04$9NacPqfsLBlWcsc8cENivOPHOF9rUjcWDP28CI2JPHcMLwVMVX.Ty"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Example User"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Fri, 15 Jun 2012 09:34:32 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mSQL (17.6ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'example@example.com' LIMIT 1[0m
+  [1m[35mSQL (48.4ms)[0m  INSERT INTO `users` (`created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Fri, 15 Jun 2012 09:47:42 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "example@example.com"], ["encrypted_password", "$2a$04$xe.fLtTQLz700.uUIQSGkOgd6pKZ.GXXZGfZjyBuf7JMbExBtRlM."], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Test User"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Fri, 15 Jun 2012 09:47:42 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by LogsController#index as HTML
+param locale value: 
+
+  [1m[35mUser Load (20.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mRailsSettings::Settings Load (0.5ms)[0m  [1mSELECT `settings`.* FROM `settings` WHERE `settings`.`thing_type` = 'User' AND `settings`.`thing_id` = 1 AND `settings`.`var` = 'lang' LIMIT 1[0m
+  Rendered logs/index.html.erb within layouts/application (28.1ms)
+Completed 200 OK in 323ms (Views: 253.4ms | ActiveRecord: 22.3ms)
+  [1m[35m (1.8ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'example@example.com' LIMIT 1[0m
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO `users` (`created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Fri, 15 Jun 2012 09:47:43 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "example@example.com"], ["encrypted_password", "$2a$04$NcdV035nQpg/9ev.9jia5OPSt107S3uRc6OAaYiMiIDTnrg98EphW"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Test User"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Fri, 15 Jun 2012 09:47:43 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+param locale value: 
+
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mRailsSettings::Settings Load (0.5ms)[0m  [1mSELECT `settings`.* FROM `settings` WHERE `settings`.`thing_type` = 'User' AND `settings`.`thing_id` = 2 AND `settings`.`var` = 'lang' LIMIT 1[0m
+Completed 401 Unauthorized in 31ms
+  [1m[35m (0.6ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'example@example.com' LIMIT 1[0m
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO `users` (`created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Fri, 15 Jun 2012 09:47:43 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "example@example.com"], ["encrypted_password", "$2a$04$I3mywi9t0.qbf9vZvHSW5uV7K1W..i5Xthl/F0OyRMfC7JZLwUXcy"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Test User"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Fri, 15 Jun 2012 09:47:43 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+param locale value: 
+
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  [1m[36mRailsSettings::Settings Load (0.5ms)[0m  [1mSELECT `settings`.* FROM `settings` WHERE `settings`.`thing_type` = 'User' AND `settings`.`thing_id` = 3 AND `settings`.`var` = 'lang' LIMIT 1[0m
+Completed 401 Unauthorized in 4ms
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+Processing by HomeController#index as HTML
+param locale value: 
+
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` 
+Completed 200 OK in 83ms (Views: 14.4ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mSQL (18.8ms)[0m  [1mBEGIN[0m
+Processing by LogsController#index as HTML
+param locale value: 
+
+  Rendered logs/index.html.erb within layouts/application (28.5ms)
+Completed 200 OK in 260ms (Views: 170.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user2@example.com' LIMIT 1[0m
+  [1m[35mSQL (70.1ms)[0m  INSERT INTO `users` (`created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Fri, 15 Jun 2012 09:55:09 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "user2@example.com"], ["encrypted_password", "$2a$04$5BzbezzDyBpp4YAbBQOzhumD.XlIfvB.GwC5FDLd7UAsm6slYHwyq"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Test User"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Fri, 15 Jun 2012 09:55:09 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+param locale value: 
+
+  [1m[35mUser Load (0.8ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mRailsSettings::Settings Load (0.6ms)[0m  [1mSELECT `settings`.* FROM `settings` WHERE `settings`.`thing_type` = 'User' AND `settings`.`thing_id` = 1 AND `settings`.`var` = 'lang' LIMIT 1[0m
+Completed 401 Unauthorized in 42ms
+  [1m[35m (1.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user2@example.com' LIMIT 1[0m
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO `users` (`created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Fri, 15 Jun 2012 09:55:09 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "user2@example.com"], ["encrypted_password", "$2a$04$t7hMp2vmfvgP3XVjoFdKsOET1NYdAzDgdDjt7ufOwreRAno3sb1OG"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Test User"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Fri, 15 Jun 2012 09:55:09 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+param locale value: 
+
+  [1m[35mUser Load (0.7ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mRailsSettings::Settings Load (0.5ms)[0m  [1mSELECT `settings`.* FROM `settings` WHERE `settings`.`thing_type` = 'User' AND `settings`.`thing_id` = 2 AND `settings`.`var` = 'lang' LIMIT 1[0m
+Completed 401 Unauthorized in 4ms
+  [1m[35m (0.5ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+Processing by HomeController#index as HTML
+param locale value: 
+
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` 
+Completed 200 OK in 6ms (Views: 2.9ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mSQL (18.5ms)[0m  [1mBEGIN[0m
+Processing by LogsController#index as HTML
+param locale value: 
+
+  Rendered logs/index.html.erb within layouts/application (27.6ms)
+Completed 200 OK in 242ms (Views: 163.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user2@example.com' LIMIT 1[0m
+  [1m[35mSQL (66.0ms)[0m  INSERT INTO `users` (`created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Fri, 15 Jun 2012 09:57:36 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "user2@example.com"], ["encrypted_password", "$2a$04$sWlDAhj0pew9qbMTMrzAUOCO.jpbfjx48mK4RlhMNiS1aYUec..zi"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Test User"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Fri, 15 Jun 2012 09:57:36 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+param locale value: 
+
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mRailsSettings::Settings Load (0.6ms)[0m  [1mSELECT `settings`.* FROM `settings` WHERE `settings`.`thing_type` = 'User' AND `settings`.`thing_id` = 1 AND `settings`.`var` = 'lang' LIMIT 1[0m
+Completed 401 Unauthorized in 41ms
+  [1m[35m (1.7ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user2@example.com' LIMIT 1[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO `users` (`created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Fri, 15 Jun 2012 09:57:37 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "user2@example.com"], ["encrypted_password", "$2a$04$iUm6cNhme1efb5W2azunl.MpTaajq4wJxhfDimtDAhnLMwOkalFpG"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Test User"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Fri, 15 Jun 2012 09:57:37 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+param locale value: 
+
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mRailsSettings::Settings Load (0.5ms)[0m  [1mSELECT `settings`.* FROM `settings` WHERE `settings`.`thing_type` = 'User' AND `settings`.`thing_id` = 2 AND `settings`.`var` = 'lang' LIMIT 1[0m
+Completed 401 Unauthorized in 4ms
+  [1m[35m (0.5ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+Processing by HomeController#index as HTML
+param locale value: 
+
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` 
+Completed 200 OK in 6ms (Views: 3.0ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mSQL (17.9ms)[0m  [1mBEGIN[0m
+Processing by LogsController#index as HTML
+param locale value: 
+
+  Rendered logs/index.html.erb within layouts/application (27.8ms)
+Completed 200 OK in 243ms (Views: 164.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user2@example.com' LIMIT 1[0m
+  [1m[35mSQL (66.6ms)[0m  INSERT INTO `users` (`created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Fri, 15 Jun 2012 09:58:21 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "user2@example.com"], ["encrypted_password", "$2a$04$VLecE3rc9.Mdh47cX0j.3OCMOoqe5xZ/kr/Lll6E4/kGCEDGVgYfa"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Test User"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Fri, 15 Jun 2012 09:58:21 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+param locale value: 
+
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mRailsSettings::Settings Load (0.5ms)[0m  [1mSELECT `settings`.* FROM `settings` WHERE `settings`.`thing_type` = 'User' AND `settings`.`thing_id` = 1 AND `settings`.`var` = 'lang' LIMIT 1[0m
+Completed 401 Unauthorized in 41ms
+  [1m[35m (3.3ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user2@example.com' LIMIT 1[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO `users` (`created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Fri, 15 Jun 2012 09:58:21 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "user2@example.com"], ["encrypted_password", "$2a$04$aV4Ey3j63Oy7I/6S8kj6MOGLVbuhp275azymRj/oRxFdVkKNDxPIa"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Test User"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Fri, 15 Jun 2012 09:58:21 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+param locale value: 
+
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mRailsSettings::Settings Load (0.5ms)[0m  [1mSELECT `settings`.* FROM `settings` WHERE `settings`.`thing_type` = 'User' AND `settings`.`thing_id` = 2 AND `settings`.`var` = 'lang' LIMIT 1[0m
+Completed 401 Unauthorized in 4ms
+  [1m[35m (0.5ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+Processing by HomeController#index as HTML
+param locale value: 
+
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` 
+Completed 200 OK in 6ms (Views: 3.3ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mSQL (18.2ms)[0m  [1mBEGIN[0m
+Processing by LogsController#index as HTML
+param locale value: 
+
+  Rendered logs/index.html.erb within layouts/application (27.4ms)
+Completed 200 OK in 241ms (Views: 163.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'wyh770406@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (66.0ms)[0m  INSERT INTO `users` (`created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Fri, 15 Jun 2012 10:00:47 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "wyh770406@gmail.com"], ["encrypted_password", "$2a$04$Qq8TgQieO1XuuWDDxnzGSuCcjtneT0MrKs6xLaaYvrpszFTPrbp9C"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Test User"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Fri, 15 Jun 2012 10:00:47 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+param locale value: 
+
+  [1m[35mUser Load (0.7ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mRailsSettings::Settings Load (0.6ms)[0m  [1mSELECT `settings`.* FROM `settings` WHERE `settings`.`thing_type` = 'User' AND `settings`.`thing_id` = 1 AND `settings`.`var` = 'lang' LIMIT 1[0m
+Completed 401 Unauthorized in 41ms
+  [1m[35m (45.8ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'wyh770406@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO `users` (`created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Fri, 15 Jun 2012 10:00:47 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "wyh770406@gmail.com"], ["encrypted_password", "$2a$04$1t3r0lrdOUr4l/74bM.PnufOCXsbgw2PbW/X1jOAXQ8gUPbgznuwq"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Test User"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Fri, 15 Jun 2012 10:00:47 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+param locale value: 
+
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mRailsSettings::Settings Load (0.5ms)[0m  [1mSELECT `settings`.* FROM `settings` WHERE `settings`.`thing_type` = 'User' AND `settings`.`thing_id` = 2 AND `settings`.`var` = 'lang' LIMIT 1[0m
+Completed 401 Unauthorized in 4ms
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+Processing by HomeController#index as HTML
+param locale value: 
+
+  [1m[35mUser Load (0.7ms)[0m  SELECT `users`.* FROM `users` 
+Completed 200 OK in 71ms (Views: 68.1ms | ActiveRecord: 0.7ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mSQL (18.2ms)[0m  [1mBEGIN[0m
+Processing by LogsController#index as HTML
+param locale value: 
+
+  Rendered logs/index.html.erb within layouts/application (27.7ms)
+Completed 200 OK in 244ms (Views: 165.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+Processing by SettingsController#lang as HTML
+param locale value: 
+
+Completed 500 Internal Server Error in 1ms
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'wyh770406@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (66.9ms)[0m  INSERT INTO `users` (`created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Fri, 15 Jun 2012 10:02:48 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "wyh770406@gmail.com"], ["encrypted_password", "$2a$04$pGuZi3CYPPxoc7MmMNtFHO1NJ9SxNL7fVBNtvmvjKSjUVchPfHcBC"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Test User"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Fri, 15 Jun 2012 10:02:48 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+param locale value: 
+
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mRailsSettings::Settings Load (0.6ms)[0m  [1mSELECT `settings`.* FROM `settings` WHERE `settings`.`thing_type` = 'User' AND `settings`.`thing_id` = 1 AND `settings`.`var` = 'lang' LIMIT 1[0m
+Completed 401 Unauthorized in 42ms
+  [1m[35m (24.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'wyh770406@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO `users` (`created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Fri, 15 Jun 2012 10:02:48 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "wyh770406@gmail.com"], ["encrypted_password", "$2a$04$oP8bmHWu7pgBTCJCw6NVKObd/L9wmXo7CovTsUMm0XkOJVnXpM4Pa"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Test User"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Fri, 15 Jun 2012 10:02:48 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+param locale value: 
+
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mRailsSettings::Settings Load (0.5ms)[0m  [1mSELECT `settings`.* FROM `settings` WHERE `settings`.`thing_type` = 'User' AND `settings`.`thing_id` = 2 AND `settings`.`var` = 'lang' LIMIT 1[0m
+Completed 401 Unauthorized in 4ms
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+Processing by HomeController#index as HTML
+param locale value: 
+
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` 
+Completed 200 OK in 6ms (Views: 3.0ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mSQL (18.0ms)[0m  [1mBEGIN[0m
+Processing by LogsController#index as HTML
+param locale value: 
+
+  Rendered logs/index.html.erb within layouts/application (27.6ms)
+Completed 200 OK in 243ms (Views: 164.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'wyh770406@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (7.0ms)[0m  INSERT INTO `users` (`created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Fri, 15 Jun 2012 10:04:09 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "wyh770406@gmail.com"], ["encrypted_password", "$2a$04$tTgLxql/U8MbWIQx0.t6Ruudso4V2Dt4JeFK2nCzdAgI5fGV3XgDi"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Test User"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Fri, 15 Jun 2012 10:04:09 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+param locale value: 
+
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mRailsSettings::Settings Load (0.5ms)[0m  [1mSELECT `settings`.* FROM `settings` WHERE `settings`.`thing_type` = 'User' AND `settings`.`thing_id` = 1 AND `settings`.`var` = 'lang' LIMIT 1[0m
+Completed 401 Unauthorized in 41ms
+  [1m[35m (3.9ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'wyh770406@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO `users` (`created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Fri, 15 Jun 2012 10:04:09 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "wyh770406@gmail.com"], ["encrypted_password", "$2a$04$kgFf8swwbZf9RZfl75dBbua.Sw/InL72M8BMNsnfaewXc67scEMlG"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Test User"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Fri, 15 Jun 2012 10:04:09 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+param locale value: 
+
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mRailsSettings::Settings Load (0.5ms)[0m  [1mSELECT `settings`.* FROM `settings` WHERE `settings`.`thing_type` = 'User' AND `settings`.`thing_id` = 2 AND `settings`.`var` = 'lang' LIMIT 1[0m
+Completed 401 Unauthorized in 4ms
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+Processing by HomeController#index as HTML
+param locale value: 
+
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` 
+Completed 200 OK in 6ms (Views: 3.0ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mSQL (17.8ms)[0m  [1mBEGIN[0m
+Processing by LogsController#index as HTML
+param locale value: 
+
+  Rendered logs/index.html.erb within layouts/application (27.5ms)
+Completed 200 OK in 243ms (Views: 164.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'wyh770406@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (7.0ms)[0m  INSERT INTO `users` (`created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Fri, 15 Jun 2012 10:06:07 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "wyh770406@gmail.com"], ["encrypted_password", "$2a$04$6ouynXbwuJaM5FMXtwj/h.BvMFUud.D4/gFmWxBrywN88LmvskzzO"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Test User"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Fri, 15 Jun 2012 10:06:07 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by SettingsController#lang as HTML
+param locale value: 
+
+  [1m[35mUser Load (0.7ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mRailsSettings::Settings Load (0.6ms)[0m  [1mSELECT `settings`.* FROM `settings` WHERE `settings`.`thing_type` = 'User' AND `settings`.`thing_id` = 1 AND `settings`.`var` = 'lang' LIMIT 1[0m
+  [1m[35mRailsSettings::Settings Load (0.4ms)[0m  SELECT `settings`.* FROM `settings` WHERE `settings`.`thing_type` = 'User' AND `settings`.`thing_id` = 1 AND `settings`.`var` = 'lang' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.9ms)[0m  INSERT INTO `settings` (`created_at`, `thing_id`, `thing_type`, `updated_at`, `value`, `var`) VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Fri, 15 Jun 2012 10:06:08 UTC +00:00], ["thing_id", 1], ["thing_type", "User"], ["updated_at", Fri, 15 Jun 2012 10:06:08 UTC +00:00], ["value", "--- !!null \n...\n"], ["var", "lang"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/
+Completed 302 Found in 58ms (ActiveRecord: 5.3ms)
+  [1m[35m (3.0ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'wyh770406@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO `users` (`created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Fri, 15 Jun 2012 10:06:08 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "wyh770406@gmail.com"], ["encrypted_password", "$2a$04$psGtjo24lIPu0a.XF1VWh.E3kIbMahz5X8IR6wHzWZQMFSr2/xlJ2"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Test User"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Fri, 15 Jun 2012 10:06:08 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+param locale value: 
+
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mRailsSettings::Settings Load (0.5ms)[0m  [1mSELECT `settings`.* FROM `settings` WHERE `settings`.`thing_type` = 'User' AND `settings`.`thing_id` = 2 AND `settings`.`var` = 'lang' LIMIT 1[0m
+Completed 401 Unauthorized in 5ms
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'wyh770406@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO `users` (`created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Fri, 15 Jun 2012 10:06:08 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "wyh770406@gmail.com"], ["encrypted_password", "$2a$04$FkSv.WY4T0OJw44eJ4h6IOi5ArPgsFA3SGJEuVqBu/NpezEm.ipM."], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Test User"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Fri, 15 Jun 2012 10:06:08 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+param locale value: 
+
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  [1m[36mRailsSettings::Settings Load (0.6ms)[0m  [1mSELECT `settings`.* FROM `settings` WHERE `settings`.`thing_type` = 'User' AND `settings`.`thing_id` = 3 AND `settings`.`var` = 'lang' LIMIT 1[0m
+Completed 401 Unauthorized in 4ms
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+Processing by HomeController#index as HTML
+param locale value: 
+
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` 
+Completed 200 OK in 6ms (Views: 2.9ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mSQL (18.1ms)[0m  [1mBEGIN[0m
+Processing by LogsController#index as HTML
+param locale value: 
+
+  Rendered logs/index.html.erb within layouts/application (30.1ms)
+Completed 200 OK in 261ms (Views: 178.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'wyh770406@gmail.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'wyh770406@gmail.com' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'wyh770406@gmail.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+Processing by HomeController#index as HTML
+param locale value: 
+
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT `users`.* FROM `users` [0m
+Completed 200 OK in 8ms (Views: 3.7ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (18.2ms)[0m  [1mBEGIN[0m
+Processing by LogsController#index as HTML
+param locale value: 
+
+  Rendered logs/index.html.erb within layouts/application (27.6ms)
+Completed 200 OK in 268ms (Views: 165.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'wyh770406@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (67.1ms)[0m  INSERT INTO `users` (`created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Fri, 15 Jun 2012 10:09:06 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "wyh770406@gmail.com"], ["encrypted_password", "$2a$04$/GLXdbQa2vRM2PdeyKQys.FscC0CAMlLEF3SSTBBhvlGMEOyuPGV6"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Test User"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Fri, 15 Jun 2012 10:09:06 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by SettingsController#lang as HTML
+param locale value: 
+
+  [1m[35mUser Load (0.8ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mRailsSettings::Settings Load (0.7ms)[0m  [1mSELECT `settings`.* FROM `settings` WHERE `settings`.`thing_type` = 'User' AND `settings`.`thing_id` = 1 AND `settings`.`var` = 'lang' LIMIT 1[0m
+  [1m[35mRailsSettings::Settings Load (0.4ms)[0m  SELECT `settings`.* FROM `settings` WHERE `settings`.`thing_type` = 'User' AND `settings`.`thing_id` = 1 AND `settings`.`var` = 'lang' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.5ms)[0m  INSERT INTO `settings` (`created_at`, `thing_id`, `thing_type`, `updated_at`, `value`, `var`) VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Fri, 15 Jun 2012 10:09:07 UTC +00:00], ["thing_id", 1], ["thing_type", "User"], ["updated_at", Fri, 15 Jun 2012 10:09:07 UTC +00:00], ["value", "--- !!null \n...\n"], ["var", "lang"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/
+Completed 302 Found in 58ms (ActiveRecord: 5.0ms)
+  [1m[35m (4.0ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'wyh770406@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO `users` (`created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Fri, 15 Jun 2012 10:09:07 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "wyh770406@gmail.com"], ["encrypted_password", "$2a$04$eBQFWCgRchTcCXjO0Pe2zuoguAHZkBseHEw2aimMJYrWCG8sBDN4O"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Test User"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Fri, 15 Jun 2012 10:09:07 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+param locale value: 
+
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mRailsSettings::Settings Load (0.5ms)[0m  [1mSELECT `settings`.* FROM `settings` WHERE `settings`.`thing_type` = 'User' AND `settings`.`thing_id` = 2 AND `settings`.`var` = 'lang' LIMIT 1[0m
+Completed 401 Unauthorized in 5ms
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'wyh770406@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO `users` (`created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Fri, 15 Jun 2012 10:09:07 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "wyh770406@gmail.com"], ["encrypted_password", "$2a$04$8Ym4JAxxN93DbAEoSyfQe.9XOsFVkl87mCai621Hcu501Wdndrt36"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Test User"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Fri, 15 Jun 2012 10:09:07 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+param locale value: 
+
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  [1m[36mRailsSettings::Settings Load (0.5ms)[0m  [1mSELECT `settings`.* FROM `settings` WHERE `settings`.`thing_type` = 'User' AND `settings`.`thing_id` = 3 AND `settings`.`var` = 'lang' LIMIT 1[0m
+Completed 401 Unauthorized in 4ms
+  [1m[35m (2.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+Processing by HomeController#index as HTML
+param locale value: 
+
+  [1m[35mUser Load (0.7ms)[0m  SELECT `users`.* FROM `users` 
+Completed 200 OK in 8ms (Views: 3.7ms | ActiveRecord: 0.7ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mSQL (18.2ms)[0m  [1mBEGIN[0m
+Processing by LogsController#index as HTML
+param locale value: 
+
+  Rendered logs/index.html.erb within layouts/application (27.5ms)
+Completed 200 OK in 242ms (Views: 164.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user2@example.com' LIMIT 1[0m
+  [1m[35mSQL (67.4ms)[0m  INSERT INTO `users` (`created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Fri, 15 Jun 2012 10:11:22 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "user2@example.com"], ["encrypted_password", "$2a$04$9/zwCyJmSADHGmpudfiT0OBfVbi5loVtI6sBv4r.7sf5tdJsZa5ry"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Test User"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Fri, 15 Jun 2012 10:11:22 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by SettingsController#lang as HTML
+param locale value: 
+
+  [1m[35mUser Load (0.7ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mRailsSettings::Settings Load (0.6ms)[0m  [1mSELECT `settings`.* FROM `settings` WHERE `settings`.`thing_type` = 'User' AND `settings`.`thing_id` = 1 AND `settings`.`var` = 'lang' LIMIT 1[0m
+  [1m[35mRailsSettings::Settings Load (0.4ms)[0m  SELECT `settings`.* FROM `settings` WHERE `settings`.`thing_type` = 'User' AND `settings`.`thing_id` = 1 AND `settings`.`var` = 'lang' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.5ms)[0m  INSERT INTO `settings` (`created_at`, `thing_id`, `thing_type`, `updated_at`, `value`, `var`) VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Fri, 15 Jun 2012 10:11:22 UTC +00:00], ["thing_id", 1], ["thing_type", "User"], ["updated_at", Fri, 15 Jun 2012 10:11:22 UTC +00:00], ["value", "--- !!null \n...\n"], ["var", "lang"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/
+Completed 302 Found in 58ms (ActiveRecord: 4.8ms)
+  [1m[35m (2.6ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user2@example.com' LIMIT 1[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO `users` (`created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Fri, 15 Jun 2012 10:11:22 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "user2@example.com"], ["encrypted_password", "$2a$04$yPcMYc4wKiOBYq8tOIurjeYYMAZnCgFMBbSaD0JJyQJK/CBLSbaXK"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Test User"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Fri, 15 Jun 2012 10:11:22 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+param locale value: 
+
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mRailsSettings::Settings Load (0.5ms)[0m  [1mSELECT `settings`.* FROM `settings` WHERE `settings`.`thing_type` = 'User' AND `settings`.`thing_id` = 2 AND `settings`.`var` = 'lang' LIMIT 1[0m
+Completed 401 Unauthorized in 5ms
+  [1m[35m (26.7ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user2@example.com' LIMIT 1[0m
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO `users` (`created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Fri, 15 Jun 2012 10:11:22 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "user2@example.com"], ["encrypted_password", "$2a$04$HDzZPqmB4JlGb2OTN/OwT.ktivkTtMHdZKSEkmWhc7diOl7Se2.Lm"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Test User"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Fri, 15 Jun 2012 10:11:22 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+param locale value: 
+
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  [1m[36mRailsSettings::Settings Load (0.5ms)[0m  [1mSELECT `settings`.* FROM `settings` WHERE `settings`.`thing_type` = 'User' AND `settings`.`thing_id` = 3 AND `settings`.`var` = 'lang' LIMIT 1[0m
+Completed 401 Unauthorized in 4ms
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+Processing by HomeController#index as HTML
+param locale value: 
+
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` 
+Completed 200 OK in 6ms (Views: 3.3ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m

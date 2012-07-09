@@ -1,0 +1,26 @@
+<h3>
+  <%= @callno_pool.name %>
+</h3>
+
+<p>
+  最小呼叫号码:
+  <%= @callno_pool.start_callno %>
+</p>
+
+<p>
+  最大呼叫号码:
+  <%= @callno_pool.end_callno %>
+</p>
+
+<p>
+  呼叫号码池描述:
+  <%= @callno_pool.desc %>
+</p>
+
+<p>
+  是否默认:
+  <%= @callno_pool.is_default %>
+</p>
+<%= link_to '修改', edit_adminpanel_callno_pool_path(@callno_pool) , :class => "btn" %>
+&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to '删除', adminpanel_callno_pool_path(@callno_pool), confirm: 'Are you sure?', method: :delete, :class => "btn" %>
+<%= link_to '返回', adminpanel_callno_pools_path, :class => "btn" %>

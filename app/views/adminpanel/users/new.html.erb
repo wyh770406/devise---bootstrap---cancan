@@ -1,0 +1,54 @@
+<h1>用户添加</h1>
+
+<%= form_for(@user,:url =>  adminpanel_users_path, :html => {:class => 'form-inline'}) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="control-group">
+    <%= f.label :name, '用户名', :class => "control-label" %>
+    <div class="controls">
+       <%= f.text_field :name %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :email, 'Email', :class => "control-label" %>
+    <div class="controls">
+       <%= f.text_field :email %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :mobile, '电话号码', :class => "control-label" %>
+    <div class="controls">
+       <%= f.text_field :mobile %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :birth, '生日', :class => "control-label" %>
+    <div class="controls">
+
+      <%#=f.date_select(:birth)%>
+      <%=f.date_select :birth,:order=>[:year,:month,:day], :start_year => 1915, :use_month_numbers => true%>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :session_level, '会话等级', :class => "control-label" %>
+    <div class="controls">
+
+      <%#=f.date_select(:birth)%>
+      <%=f.collection_select :session_level_id,SessionLevel.all.order("slevel_code asc"), :id,:slevel_name%>
+    </div>
+  </div>
+  <div class="form-actions">
+    <%= f.submit '保存', :class => "btn btn-primary" %>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <%= link_to '返回', adminpanel_users_path, :class => "btn" %>
+  </div>
+<%end%>
